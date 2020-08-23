@@ -1,7 +1,6 @@
 ﻿using Estimationtool.Models;
 using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,8 +17,9 @@ namespace Estimationtool.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" }
+                new HomeMenuItem {Id = MenuItemType.Home, Title="Home",Icon = "home.png" },
+                new HomeMenuItem {Id = MenuItemType.CustomFilter, Title="CustomFilter",Icon = "filter.png" }
+
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -32,7 +32,10 @@ namespace Estimationtool.Views
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
+
             };
+
         }
     }
+
 }
