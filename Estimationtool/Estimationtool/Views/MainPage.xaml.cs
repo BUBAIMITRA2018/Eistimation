@@ -34,7 +34,7 @@ namespace Estimationtool.Views
                         break;
 
                     case (int)MenuItemType.Help:
-                        MenuPages.Add(id, new NavigationPage(new RegisterPage()));
+                        MenuPages.Add(id, new NavigationPage(new Login()));
                         break;
                 }
             }

@@ -18,8 +18,6 @@
     </NavigationPage.TitleView>
 
 
-   
-
     <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout Margin="5,0,5,5">
