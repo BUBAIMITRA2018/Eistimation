@@ -18,7 +18,8 @@ namespace Estimationtool.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home",Icon = "home.png" },
-                new HomeMenuItem {Id = MenuItemType.CustomFilter, Title="CustomFilter",Icon = "filter.png" }
+                new HomeMenuItem {Id = MenuItemType.CustomFilter, Title="CustomFilter",Icon = "filter.png" },
+                new HomeMenuItem {Id = MenuItemType.Help, Title="Help",Icon = "help.png" }
 
             };
 

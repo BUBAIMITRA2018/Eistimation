@@ -7,7 +7,9 @@ namespace Estimationtool.Models
     public enum MenuItemType
     {
         Home,
-        CustomFilter
+        CustomFilter,
+        Help
+        
     }
     public class HomeMenuItem
     {

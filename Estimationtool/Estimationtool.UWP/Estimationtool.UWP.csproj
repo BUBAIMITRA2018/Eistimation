@@ -107,6 +107,7 @@
     <Content Include="filter.png" />
     <Content Include="help.png" />
     <Content Include="home.png" />
+    <Content Include="smslogo.png" />
     <Content Include="SMSSteel.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
