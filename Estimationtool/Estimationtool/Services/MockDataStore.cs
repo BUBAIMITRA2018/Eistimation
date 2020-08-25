@@ -6,61 +6,65 @@ using Estimationtool.Models;
 
 namespace Estimationtool.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Product>
     {
-        List<Item> items;
+        List<Product> products;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            products = new List<Product>();
+            var mockproducts = new List<Product>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
+                new Product{Id = Guid.NewGuid().ToString(), WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",
+                UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"}
+
+               
             };
 
-            foreach (var item in mockItems)
+            foreach (var product in mockproducts)
             {
-                items.Add(item);
+                products.Add(product);
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Product item)
         {
-            items.Add(item);
-
-            return await Task.FromResult(true);
-        }
-
-        public async Task<bool> UpdateItemAsync(Item item)
-        {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            products.Add(item);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+
+            var oldproduct = products.Where((Product arg) => arg.Id == id).FirstOrDefault();
+            products.Remove(oldproduct);
 
             return await Task.FromResult(true);
+
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Product> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return  await Task.FromResult(products.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Product>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(products);
         }
+
+        public async Task<bool> UpdateItemAsync(Product product)
+        {
+            var oldproduct = products.Where((Product arg) => arg.Id == product.Id).FirstOrDefault();
+            products.Remove(oldproduct);
+            products.Add(product);
+            return await Task.FromResult(true);
+
+        }
+
+     
     }
 }
