@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Estimationtool.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,10 @@ namespace Estimationtool.Views
 		public Home ()
 		{
 			InitializeComponent ();
-		}
+
+            BindingContext = new HomeViewModel();
+
+
+        }
 	}
 }

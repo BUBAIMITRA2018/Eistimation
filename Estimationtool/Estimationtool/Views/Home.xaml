@@ -6,68 +6,451 @@
              x:Class="Estimationtool.Views.Home"
              Title="Home">
     <ContentPage.Content>
-        <ContentView BackgroundColor="White" Padding="20">
+        <!--<ContentView BackgroundColor="White" Padding="20">-->
 
-            <dg:DataGrid ItemsSource="{Binding Products}" SelectionEnabled="True" SelectedItem="{Binding SelectedTeam}"
+        <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+            <StackLayout x:Name="GridViewLayoutStack" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <ScrollView  Orientation="Both">
+
+
+                        <dg:DataGrid ColumnSpacing="0" Padding="0,0,0,0" HeaderBordersVisible="true"    Margin="1" BorderThickness="1"
+                         ItemsSource="{Binding Products}" SelectionEnabled="True" SelectedItem="{Binding SelectedProduct}"
+						 RowHeight="-1" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8"
+						 PullToRefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}"
+						 ActiveRowColor="#8899AA">
+                            <x:Arguments>
+                                <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                            </x:Arguments>
+                            <dg:DataGrid.HeaderFontSize>
+                                <OnIdiom  x:TypeArguments="x:Double">
+                                    <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                                    <OnIdiom.Phone>12</OnIdiom.Phone>
+                                </OnIdiom>
+                            </dg:DataGrid.HeaderFontSize>
+                            <dg:DataGrid.Columns>
+
+                                <dg:DataGridColumn Title="Id" PropertyName="Id" HorizontalContentAlignment="Start" Width="10*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Id" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Start" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="WBSElement" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="ProductNo" PropertyName="ProductNo" HorizontalContentAlignment="Start" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="ProductNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="ItemDescription" PropertyName="ItemDescription" HorizontalContentAlignment="Start" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="ItemDescription" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+
+                                <dg:DataGridColumn Title="MatrialNo" PropertyName="MatrialNo" HorizontalContentAlignment="Start" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="MatrialNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="Size" PropertyName="Size" HorizontalContentAlignment="Start"  Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Size" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+
+                                <dg:DataGridColumn Title="Description" PropertyName="Description"  HorizontalContentAlignment="Start" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Name" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+
+                                <dg:DataGridColumn Title="Project" PropertyName="Project" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Project" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="QtyReq" PropertyName="QtyReq" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="QtyReq" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="UnitofMeas" PropertyName="UnitofMeasurment" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="UnitofMeas" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="UnitWt" PropertyName="UnitWt" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="UnitWt" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="WeightUnit" PropertyName="WeightUnit" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="WeightUnit" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="PurchasingDocument" PropertyName="PurchasingDocument" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="PurchasingDocument" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="Item" PropertyName="Item" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Item" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="PurchaseOrderNo" PropertyName="PurchaseOrderNo" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="PurchaseOrderNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="NetOrderPrice" PropertyName="NetOrderPrice" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="NetOrderPrice" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="Currency" PropertyName="Currency" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Currency" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="SupplierName" PropertyName="SupplierName" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="SupplierName" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="Destination" PropertyName="Destination" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Destination" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                </dg:DataGridColumn>
+
+
+
+                            </dg:DataGrid.Columns>
+                            <dg:DataGrid.RowsBackgroundColorPalette>
+                                <dg:PaletteCollection>
+                                    <Color>#F2F2F2</Color>
+                                    <Color>#FFFFFF</Color>
+                                </dg:PaletteCollection>
+                            </dg:DataGrid.RowsBackgroundColorPalette>
+
+                        </dg:DataGrid>
+
+
+
+
+
+                    </ScrollView>
+
+
+
+                       
+
+                    
+
+                </StackLayout>
+                
+            </StackLayout>
+
+        </RelativeLayout>
+
+
+
+
+            <!--<dg:DataGrid ColumnSpacing="0" Padding="0,0,0,0" HeaderBordersVisible="true"    Margin="1" BorderThickness="1"
+                         ItemsSource="{Binding Products}" SelectionEnabled="True" SelectedItem="{Binding SelectedProduct}"
 						 RowHeight="70" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8"
 						 PullToRefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}"
 						 ActiveRowColor="#8899AA">
-                <x:Arguments>
-                    <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
-                </x:Arguments>
-                <dg:DataGrid.HeaderFontSize>
-                    <OnIdiom  x:TypeArguments="x:Double">
-                        <OnIdiom.Tablet>15</OnIdiom.Tablet>
-                        <OnIdiom.Phone>12</OnIdiom.Phone>
-                    </OnIdiom>
-                </dg:DataGrid.HeaderFontSize>
-                <dg:DataGrid.Columns>
-                    <dg:DataGridColumn Title="Logo" PropertyName="Logo" Width="100" SortingEnabled="False">
-                        <dg:DataGridColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding}" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit" HeightRequest="60" />
-                            </DataTemplate>
-                        </dg:DataGridColumn.CellTemplate>
-                    </dg:DataGridColumn>
-                    <dg:DataGridColumn Title="Team" PropertyName="Name" Width="2*"/>
-                    <dg:DataGridColumn Title="Win" PropertyName="Win" Width="0.95*"/>
-                    <dg:DataGridColumn Title="Loose" PropertyName="Loose"  Width="1*"/>
-                    <dg:DataGridColumn PropertyName="Home">
-                        <dg:DataGridColumn.FormattedTitle>
-                            <FormattedString>
-                                <Span Text="Home" ForegroundColor="Black" FontSize="13" FontAttributes="Bold"/>
-                                <Span Text=" (win-loose)" ForegroundColor="#333333" FontSize="11" />
-                            </FormattedString>
-                        </dg:DataGridColumn.FormattedTitle>
-                    </dg:DataGridColumn>
-                    <dg:DataGridColumn Title="Percentage" PropertyName="Percentage" StringFormat="{}{0:0.00}" />
-                    <dg:DataGridColumn Title="Streak" PropertyName="Streak" Width="0.7*">
-                        <dg:DataGridColumn.CellTemplate>
-                            <DataTemplate>
-                                <ContentView HorizontalOptions="Fill" VerticalOptions="Fill"
-						 BackgroundColor="{Binding Converter={StaticResource StreakToColorConverter}}">
-                                    <Label Text="{Binding}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
-                                </ContentView>
-                            </DataTemplate>
-                        </dg:DataGridColumn.CellTemplate>
-                    </dg:DataGridColumn>
-                </dg:DataGrid.Columns>
-                <dg:DataGrid.RowsBackgroundColorPalette>
-                    <dg:PaletteCollection>
-                        <Color>#F2F2F2</Color>
-                        <Color>#FFFFFF</Color>
-                    </dg:PaletteCollection>
-                </dg:DataGrid.RowsBackgroundColorPalette>
-                <dg:DataGrid.Resources>
-                    <ResourceDictionary>
-                        <conv:StreakToColorConverter x:Key="StreakToColorConverter"/>
-                    </ResourceDictionary>
-                </dg:DataGrid.Resources>
-            </dg:DataGrid>
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                    <dg:DataGrid.HeaderFontSize>
+                        <OnIdiom  x:TypeArguments="x:Double">
+                            <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                            <OnIdiom.Phone>12</OnIdiom.Phone>
+                        </OnIdiom>
+                    </dg:DataGrid.HeaderFontSize>
+                    <dg:DataGrid.Columns>
+
+                        <dg:DataGridColumn Title="Id" PropertyName="Id" HorizontalContentAlignment="Start" Width="10*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Id" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Start" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="WBSElement" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="ProductNo" PropertyName="ProductNo" HorizontalContentAlignment="Start" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="ProductNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="ItemDescription" PropertyName="ItemDescription" HorizontalContentAlignment="Start" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="ItemDescription" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
 
 
-        </ContentView>
+                        <dg:DataGridColumn Title="MatrialNo" PropertyName="MatrialNo" HorizontalContentAlignment="Start" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="MatrialNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="Size" PropertyName="Size" HorizontalContentAlignment="Start"  Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Size" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+
+                        <dg:DataGridColumn Title="Description" PropertyName="Description"  HorizontalContentAlignment="Start" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Name" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+
+                        <dg:DataGridColumn Title="Project" PropertyName="Project" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Project" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="QtyReq" PropertyName="QtyReq" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="QtyReq" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="UnitofMeas" PropertyName="UnitofMeasurment" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="UnitofMeas" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="UnitWt" PropertyName="UnitWt" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="UnitWt" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="WeightUnit" PropertyName="WeightUnit" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="WeightUnit" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="PurchasingDocument" PropertyName="PurchasingDocument" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="PurchasingDocument" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="Item" PropertyName="Item" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Item" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="PurchaseOrderNo" PropertyName="PurchaseOrderNo" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="PurchaseOrderNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="NetOrderPrice" PropertyName="NetOrderPrice" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="NetOrderPrice" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="Currency" PropertyName="Currency" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Currency" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="SupplierName" PropertyName="SupplierName" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="SupplierName" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+                        <dg:DataGridColumn Title="Destination" PropertyName="Destination" Width="20*">
+                            <dg:DataGridColumn.FormattedTitle>
+                                <FormattedString>
+                                    <Span Text="Destination" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </dg:DataGridColumn.FormattedTitle>
+                        </dg:DataGridColumn>
+
+
+
+                    </dg:DataGrid.Columns>
+                    <dg:DataGrid.RowsBackgroundColorPalette>
+                        <dg:PaletteCollection>
+                            <Color>#F2F2F2</Color>
+                            <Color>#FFFFFF</Color>
+                        </dg:PaletteCollection>
+                    </dg:DataGrid.RowsBackgroundColorPalette>
+
+                </dg:DataGrid>-->
+
+
+
+
+
+
+        
+
+
+               
+
+
+        <!--</ContentView>-->
        
       
     </ContentPage.Content>
 </ContentPage>
+
+
+
+
+<!--<dg:DataGridColumn Title="Logo" PropertyName="Logo" Width="100" SortingEnabled="False">
+    <dg:DataGridColumn.CellTemplate>
+        <DataTemplate>
+            <Image Source="{Binding}" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit" HeightRequest="60" />
+        </DataTemplate>
+    </dg:DataGridColumn.CellTemplate>
+</dg:DataGridColumn>
+<dg:DataGridColumn Title="Team" PropertyName="Name" Width="2*"/>
+<dg:DataGridColumn Title="Win" PropertyName="Win" Width="0.95*"/>
+<dg:DataGridColumn Title="Loose" PropertyName="Loose"  Width="1*"/>
+<dg:DataGridColumn PropertyName="Home">
+    <dg:DataGridColumn.FormattedTitle>
+        <FormattedString>
+            <Span Text="Home" ForegroundColor="Black" FontSize="13" FontAttributes="Bold"/>
+            <Span Text=" (win-loose)" ForegroundColor="#333333" FontSize="11" />
+        </FormattedString>
+    </dg:DataGridColumn.FormattedTitle>
+</dg:DataGridColumn>
+<dg:DataGridColumn Title="Percentage" PropertyName="Percentage" StringFormat="{}{0:0.00}" />
+<dg:DataGridColumn Title="Streak" PropertyName="Streak" Width="0.7*">
+    <dg:DataGridColumn.CellTemplate>
+        <DataTemplate>
+            <ContentView HorizontalOptions="Fill" VerticalOptions="Fill"
+						 BackgroundColor="{Binding Converter={StaticResource StreakToColorConverter}}">
+                <Label Text="{Binding}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+            </ContentView>
+        </DataTemplate>
+    </dg:DataGridColumn.CellTemplate>
+</dg:DataGridColumn>
+</dg:DataGrid.Columns>-->

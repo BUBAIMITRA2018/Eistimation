@@ -27,7 +27,7 @@ namespace Estimationtool.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Home:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new Home()));
                         break;
                     case (int)MenuItemType.CustomFilter:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));

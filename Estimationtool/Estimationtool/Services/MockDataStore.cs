@@ -15,12 +15,33 @@ namespace Estimationtool.Services
             products = new List<Product>();
             var mockproducts = new List<Product>
             {
-                new Product{Id = Guid.NewGuid().ToString(), WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",
-                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",
+                new Product{Id = "1", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
-                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"}
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
 
-               
+                 new Product{Id = "2", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
+                UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
+
+                new Product{Id = "3", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
+                UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
+
+                new Product{Id = "4", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
+                UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
+
+                new Product{Id = "5", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
+                UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
+                UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
+
+
+
             };
 
             foreach (var product in mockproducts)

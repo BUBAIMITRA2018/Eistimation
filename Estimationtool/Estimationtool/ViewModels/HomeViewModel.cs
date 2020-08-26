@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Estimationtool.Models;
 using Estimationtool.Views;
 using Estimationtool.Services;
+using System.Windows.Input;
 
 namespace Estimationtool.ViewModels
 {
@@ -21,9 +22,24 @@ namespace Estimationtool.ViewModels
         public IDataStore<Product> DataStore => DependencyService.Get<IDataStore<Product>>() ?? new MockDataStore();
 
         public ObservableCollection<Product> Products { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public ICommand LoadItemsCommand { get; set; }
 
 
+
+
+
+        public bool IsRefreshing
+        {
+            get { return this._isRefreshing; }
+            set { this.SetProperty(ref this._isRefreshing, value); }
+        }
+
+
+        public Product SelectedProduct
+        {
+            get { return this._selectedProduct; }
+            set { this.SetProperty(ref this._selectedProduct, value); }
+        }
 
 
 
@@ -31,26 +47,16 @@ namespace Estimationtool.ViewModels
         {
             Title = "Home";
             Products = new ObservableCollection<Product>();
+
+           
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-        }
-
-
-        async Task ExecuteLoadItemsCommand()
-        {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
 
             try
             {
-                Products.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Products.Add(item);
-                }
+
+                ExecuteLoadItemsCommand();
+
+
             }
 
             catch (Exception ex)
@@ -64,7 +70,43 @@ namespace Estimationtool.ViewModels
 
 
 
-        }
 
-    }
+
+
+
+
+            async Task ExecuteLoadItemsCommand()
+            {
+                if (IsBusy)
+                    return;
+
+                IsBusy = true;
+
+                try
+                {
+                    Products.Clear();
+                    var items = await DataStore.GetItemsAsync();
+                    foreach (var item in items)
+                    {
+                        Products.Add(item);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+                finally
+                {
+                    IsBusy = false;
+                }
+
+
+
+            }
+
+        }
+    }     
 }
+
+

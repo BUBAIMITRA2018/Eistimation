@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Testproject.Models
+namespace Estimationtool.Models
 {
     public class Item
     {
