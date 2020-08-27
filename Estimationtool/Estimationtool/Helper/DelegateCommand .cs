@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Estimationtool.Helper
 {
-    class DelegateCommand
+    class DelegateCommand:ICommand
     {
 
         /// <summary>
