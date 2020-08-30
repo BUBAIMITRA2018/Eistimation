@@ -28,7 +28,7 @@
                             <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
@@ -42,13 +42,13 @@
 
                    
 
-                            <StackLayout Grid.Row="1" Grid.Column="3" >
-                            <Label Text="Search Item" FontAttributes="Bold" HorizontalOptions="Center" />
+                            <StackLayout Grid.Row="1" Grid.Column="4" >
+                                <Label Text="SearchItem" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,5,0,0" />
                             </StackLayout>
 
 
 
-                        <StackLayout Grid.Row="1" Grid.Column="4" >
+                        <StackLayout Grid.Row="1" Grid.Column="5" >
                            
                             <Picker x:Name="SearchItem"                                
                                     ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
@@ -63,7 +63,7 @@
 
 
                         <StackLayout Grid.Row="1" Grid.Column="6" >
-                            <Label Text="SearchBy" FontAttributes="Bold" HorizontalOptions="Center" />
+                                <Label Text="SearchBy" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,5,0,0"  />
                         </StackLayout>
 
 
