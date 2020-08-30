@@ -14,7 +14,7 @@ namespace Estimationtool
             InitializeComponent();
 
 
-            MainPage = new Login();
+            MainPage = new CustomFilter();
         }
 
         protected override void OnStart()

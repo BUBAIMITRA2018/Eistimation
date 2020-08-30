@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Estimationtool.ViewModels
 {
@@ -11,7 +11,7 @@ namespace Estimationtool.ViewModels
 
         private int _selectedIndex;
         private string _selectedItem;
-        private Color _textColor = Color.Red;
+        private Xamarin.Forms.Color _textColor = Xamarin.Forms.Color.Red;
 
         public int SelectedIndex
         {
@@ -41,7 +41,7 @@ namespace Estimationtool.ViewModels
         public List<string> List { get; private set; }
         public List<string> List2 { get; private set; }
 
-        public Color TextColor
+        public Xamarin.Forms.Color TextColor
         {
             get
             {
@@ -71,6 +71,11 @@ namespace Estimationtool.ViewModels
                 "Destination"
 
             };
+
+            SelectedIndex = 1;
+            ChangeTextColorCommand = new Command(ChangeColor);
+
+
         }
 
         public ICommand ChangeTextColorCommand

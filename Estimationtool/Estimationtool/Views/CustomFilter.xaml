@@ -9,53 +9,79 @@
 
 
             <StackLayout x:Name="GridViewLayoutStack" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
-                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <ScrollView  Orientation="Both">
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                  
 
-                    <Grid>
+                        <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+
+
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="200"/>
                             <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
 
                         </Grid.ColumnDefinitions>
 
 
+                   
 
-                        <StackLayout Grid.Row="1" Grid.Column="3">
-                            <Label Text="Bindable Picker Demo" FontAttributes="Bold" HorizontalOptions="Center" />
-                            <Picker Title="Select a country" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                            <StackLayout Grid.Row="1" Grid.Column="3" >
+                            <Label Text="Search Item" FontAttributes="Bold" HorizontalOptions="Center" />
+                            </StackLayout>
+
+
+
+                        <StackLayout Grid.Row="1" Grid.Column="4" >
+                           
+                            <Picker x:Name="SearchItem"                                
+                                    ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                                    WidthRequest="200"
                                     SelectedIndex ="{Binding Path=SelectedIndex, Mode=TwoWay}" 
-                                    TextColor="{Binding Path=TextColor}"/>
-                         
-
-                            <!--TextColor="{Binding Path=TextColor}"
-                            SelectedIndexChanged="Combo1_SelectedIndexChanged"
-                            BackgroundColor="Blue"
-                            ItemsSource="{Binding Path=List, Mode=OneWay}"
-                            SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}">-->
+                                    TextColor="{Binding Path=TextColor}"
+                                    />
 
 
                         </StackLayout>
-               
+
+
+
+                        <StackLayout Grid.Row="1" Grid.Column="6" >
+                            <Label Text="SearchBy" FontAttributes="Bold" HorizontalOptions="Center" />
+                        </StackLayout>
+
+
+
+                        <StackLayout Grid.Row="1" Grid.Column="7" >
+
+                            <Picker ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                                    WidthRequest="200"
+                                    SelectedIndex ="{Binding Path=SelectedIndex, Mode=TwoWay}" 
+                                    TextColor="{Binding Path=TextColor}"/>
+                        </StackLayout>
 
 
                     </Grid>
-
-
-
-
-
-
+ 
                 </StackLayout>
+                    
+                </ScrollView>
             </StackLayout>
 
         </RelativeLayout>
