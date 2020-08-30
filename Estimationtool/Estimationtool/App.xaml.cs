@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Estimationtool.Views;
+using Estimationtool.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Estimationtool
@@ -20,6 +21,10 @@ namespace Estimationtool
         protected override void OnStart()
         {
             // Handle when your app starts
+
+
+          
+          
         }
 
         protected override void OnSleep()
@@ -29,7 +34,10 @@ namespace Estimationtool
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            //HomeViewModel vm = new HomeViewModel();
+            //vm.ExecuteLoadItemsCommand();
+
+
         }
     }
 }

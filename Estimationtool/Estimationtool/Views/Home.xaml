@@ -19,7 +19,7 @@
 
                         <dg:DataGrid ColumnSpacing="0" Padding="0,0,0,0" HeaderBordersVisible="true"    Margin="1" BorderThickness="1"
                          ItemsSource="{Binding Products}" SelectionEnabled="True" SelectedItem="{Binding SelectedProduct}"
-						 RowHeight="-1" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8"
+						 RowHeight="-1" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8" 
 						 PullToRefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}"
 						 ActiveRowColor="#8899AA">
                             <x:Arguments>

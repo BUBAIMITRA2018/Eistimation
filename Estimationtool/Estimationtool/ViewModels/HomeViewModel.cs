@@ -48,44 +48,30 @@ namespace Estimationtool.ViewModels
             Title = "Home";
             Products = new ObservableCollection<Product>();
 
-           
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-            try
-            {
-
-                ExecuteLoadItemsCommand();
+            ExecuteLoadItemsCommand();
 
 
-            }
-
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());         
 
 
 
+        }
 
-
-
-
-
-            async Task ExecuteLoadItemsCommand()
-            {
-                if (IsBusy)
+      
+        public  async Task ExecuteLoadItemsCommand()
+        {
+               if (IsBusy)
                     return;
 
                 IsBusy = true;
 
-                try
+                 IsRefreshing = true;
+
+            try
                 {
                     Products.Clear();
                     var items = await DataStore.GetItemsAsync();
+
                     foreach (var item in items)
                     {
                         Products.Add(item);
@@ -99,13 +85,16 @@ namespace Estimationtool.ViewModels
                 finally
                 {
                     IsBusy = false;
-                }
-
-
-
+                    IsRefreshing = false;
             }
 
         }
+        
+
+
+
+
+
     }     
 }
 
