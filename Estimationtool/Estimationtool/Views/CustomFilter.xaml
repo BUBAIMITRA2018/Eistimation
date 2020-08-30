@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Xamarin.Forms.ComboBox;assembly=Xamarin.Forms.ComboBox"
+             x:Class="Estimationtool.Views.CustomFilter">
+    <ContentPage.Content>
+
+        <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+            <StackLayout x:Name="GridViewLayoutStack" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=1.0}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=1.0}" VerticalOptions="FillAndExpand" Spacing="0" Padding="0,0,0,0">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <StackLayout Grid.Row="1" Grid.Column="3">
+                            <Label Text="Bindable Picker Demo" FontAttributes="Bold" HorizontalOptions="Center" />
+                            <Picker Title="Select a country" ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                                    SelectedIndex ="{Binding Path=SelectedIndex, Mode=TwoWay}" 
+                                    TextColor="{Binding Path=TextColor}"/>
+                         
+
+                            <!--TextColor="{Binding Path=TextColor}"
+                            SelectedIndexChanged="Combo1_SelectedIndexChanged"
+                            BackgroundColor="Blue"
+                            ItemsSource="{Binding Path=List, Mode=OneWay}"
+                            SelectedIndex="{Binding Path=SelectedIndex, Mode=TwoWay}">-->
+
+
+                        </StackLayout>
+               
+
+
+                    </Grid>
+
+
+
+
+
+
+                </StackLayout>
+            </StackLayout>
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+</ContentPage>

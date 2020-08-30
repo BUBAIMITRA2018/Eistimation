@@ -30,7 +30,7 @@ namespace Estimationtool.Views
                         MenuPages.Add(id, new NavigationPage(new Home()));
                         break;
                     case (int)MenuItemType.CustomFilter:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        MenuPages.Add(id, new NavigationPage(new CustomFilter()));
                         break;
 
                     case (int)MenuItemType.Help:
