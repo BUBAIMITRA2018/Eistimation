@@ -33,15 +33,15 @@
                             </dg:DataGrid.HeaderFontSize>
                             <dg:DataGrid.Columns>
 
-                                <dg:DataGridColumn Title="Id" PropertyName="Id" HorizontalContentAlignment="Start" Width="10*">
+                                <dg:DataGridColumn Title="Id" PropertyName="Id" HorizontalContentAlignment="Center" Width="10*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Id" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Id" FontSize="10"   TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Start" Width="20*">
+                                <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="WBSElement" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -49,7 +49,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="ProductNo" PropertyName="ProductNo" HorizontalContentAlignment="Start" Width="20*">
+                                <dg:DataGridColumn Title="ProductNo" PropertyName="ProductNo" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="ProductNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -57,7 +57,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="ItemDescription" PropertyName="ItemDescription" HorizontalContentAlignment="Start" Width="20*">
+                                <dg:DataGridColumn Title="ItemDescription" PropertyName="ItemDescription" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="ItemDescription" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -66,7 +66,7 @@
                                 </dg:DataGridColumn>
 
 
-                                <dg:DataGridColumn Title="MatrialNo" PropertyName="MatrialNo" HorizontalContentAlignment="Start" Width="20*">
+                                <dg:DataGridColumn Title="MatrialNo" PropertyName="MatrialNo" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="MatrialNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -74,7 +74,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="Size" PropertyName="Size" HorizontalContentAlignment="Start"  Width="20*">
+                                <dg:DataGridColumn Title="Size" PropertyName="Size" HorizontalContentAlignment="Center"  Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="Size" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -83,7 +83,7 @@
                                 </dg:DataGridColumn>
 
 
-                                <dg:DataGridColumn Title="Description" PropertyName="Description"  HorizontalContentAlignment="Start" Width="20*">
+                                <dg:DataGridColumn Title="Description" PropertyName="Description"  HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="Name" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -92,23 +92,23 @@
                                 </dg:DataGridColumn>
 
 
-                                <dg:DataGridColumn Title="Project" PropertyName="Project" Width="20*">
+                                <dg:DataGridColumn Title="Project" PropertyName="Project"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Project" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Project" FontSize="10" TextColor="Black"  FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="QtyReq" PropertyName="QtyReq" Width="20*">
+                                <dg:DataGridColumn Title="QtyReq"   HorizontalContentAlignment="Center" PropertyName="QtyReq" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="QtyReq" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="QtyReq"  FontSize="10" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="UnitofMeas" PropertyName="UnitofMeasurment" Width="20*">
+                                <dg:DataGridColumn Title="UnitofMeas" PropertyName="UnitofMeasurment"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="UnitofMeas" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -124,7 +124,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="WeightUnit" PropertyName="WeightUnit" Width="20*">
+                                <dg:DataGridColumn Title="WeightUnit" PropertyName="WeightUnit"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="WeightUnit" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -132,7 +132,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="PurchasingDocument" PropertyName="PurchasingDocument" Width="20*">
+                                <dg:DataGridColumn Title="PurchasingDocument" PropertyName="PurchasingDocument"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="PurchasingDocument" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -140,7 +140,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="Item" PropertyName="Item" Width="20*">
+                                <dg:DataGridColumn Title="Item" PropertyName="Item"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="Item" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -148,7 +148,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="PurchaseOrderNo" PropertyName="PurchaseOrderNo" Width="20*">
+                                <dg:DataGridColumn Title="PurchaseOrderNo" PropertyName="PurchaseOrderNo"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="PurchaseOrderNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -156,7 +156,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="NetOrderPrice" PropertyName="NetOrderPrice" Width="20*">
+                                <dg:DataGridColumn Title="NetOrderPrice" PropertyName="NetOrderPrice"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="NetOrderPrice" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -164,7 +164,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="Currency" PropertyName="Currency" Width="20*">
+                                <dg:DataGridColumn Title="Currency" PropertyName="Currency"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="Currency" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -172,7 +172,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="SupplierName" PropertyName="SupplierName" Width="20*">
+                                <dg:DataGridColumn Title="SupplierName" PropertyName="SupplierName"    HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="SupplierName" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
@@ -180,7 +180,7 @@
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
 
-                                <dg:DataGridColumn Title="Destination" PropertyName="Destination" Width="20*">
+                                <dg:DataGridColumn Title="Destination" PropertyName="Destination"    HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
                                             <Span Text="Destination" FontSize="10" TextColor="Black" FontAttributes="Bold"/>

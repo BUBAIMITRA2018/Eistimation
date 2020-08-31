@@ -14,7 +14,7 @@ namespace Estimationtool
             InitializeComponent();
 
 
-            MainPage = new CustomFilter();
+            MainPage = new Login();
         }
 
         protected override void OnStart()
@@ -31,5 +31,7 @@ namespace Estimationtool
         {
             // Handle when your app resumes
         }
+
+       
     }
 }

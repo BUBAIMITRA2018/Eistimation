@@ -109,6 +109,7 @@
     <Content Include="help.png" />
     <Content Include="home.png" />
     <Content Include="lock_icon_6813906.png" />
+    <Content Include="LogOut.png" />
     <Content Include="smslogo.png" />
     <Content Include="SMSSteel.png" />
     <Content Include="Properties\Default.rd.xml" />

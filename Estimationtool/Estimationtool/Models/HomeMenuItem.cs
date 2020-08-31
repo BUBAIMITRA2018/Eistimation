@@ -8,7 +8,8 @@ namespace Estimationtool.Models
     {
         Home,
         CustomFilter,
-        Help
+        Help,
+        LogOut
         
     }
     public class HomeMenuItem

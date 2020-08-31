@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using Estimationtool.Helper;
 using Estimationtool.Models;
 
 namespace Estimationtool.Services
@@ -50,11 +52,25 @@ namespace Estimationtool.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Product item)
+        public  List<string> AddItemAsync(string propertyname)
         {
-            products.Add(item);
+            var list = new List<string>();
+            foreach (var item in products)
+            {
+                var value = ReflectionExtensions.SetPropertyValue(item, propertyname);
 
-            return await Task.FromResult(true);
+
+                list.Add(value);
+            }
+
+
+            return list;
+        }
+
+
+        public static object GetPropValue(object src, string propName)
+        {
+            return src.GetType().GetProperty(propName).GetValue(src, null);
         }
 
         public async Task<bool> DeleteItemAsync(string id)

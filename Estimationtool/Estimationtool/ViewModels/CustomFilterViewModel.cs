@@ -1,45 +1,133 @@
-﻿using System;
+﻿using Estimationtool.Models;
+using Estimationtool.Services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Estimationtool.ViewModels
 {
-    class CustomFilterViewModel:BaseViewModel
+    class CustomFilterViewModel : BaseViewModel
     {
 
-        private int _selectedIndex;
-        private string _selectedItem;
+        private int _selectedIndex1;
+        private string _selectedItem1;
+        private int _selectedIndex2;
+        private string _selectedItem2;
+
+
         private Xamarin.Forms.Color _textColor = Xamarin.Forms.Color.Red;
 
-        public int SelectedIndex
+        private Product _selectedProduct;
+
+        private bool _isRefreshing;
+
+        public IDataStore<Product> DataStore => DependencyService.Get<IDataStore<Product>>() ?? new MockDataStore();
+
+        public ObservableCollection<Product> Products { get; set; }
+        public List<string> _list1;
+
+        public List<string> _list2;
+
+        public ICommand LoadItemsCommand { get; set; }
+
+
+        public List<string> List1
+        {
+            get { return _list1; }
+
+
+
+            set => this.SetProperty(ref this._list1, value);
+        }
+
+
+        public List<string> List2
+        {
+            get { return _list2; }
+
+
+
+            set => this.SetProperty(ref this._list2, value);
+        }
+
+
+
+
+        public int SelectedIndex1
         {
             get
             {
-                return _selectedIndex;
+                return _selectedIndex1;
             }
             set
             {
-                 this.SetProperty(ref this._selectedIndex, value); 
+                 this.SetProperty(ref this._selectedIndex1, value);
+               
+
+
+
             }
         }
 
 
-        public string SelectedItem
+        public string SelectedItem1
         {
             get
             {
-                return _selectedItem;
+                return _selectedItem1;
             }
             set
             {
-                this.SetProperty(ref this._selectedItem, value);
+                this.SetProperty(ref this._selectedItem1, value);
+               List<string> items =   DataStore.AddItemAsync(_selectedItem1);
+
+                List2 = items;
+
             }
         }
 
-        public List<string> List { get; private set; }
-        public List<string> List2 { get; private set; }
+        public int SelectedIndex2
+        {
+            get
+            {
+                return _selectedIndex2;
+            }
+            set
+            {
+                this.SetProperty(ref this._selectedIndex2, value);
+            }
+        }
+
+
+        public string SelectedItem2
+        {
+            get
+            {
+                return _selectedItem2;
+            }
+            set
+            {
+                this.SetProperty(ref this._selectedItem2, value);
+
+                
+
+
+            }
+        }
+
+
+
+
+
+
+
+
+ 
 
         public Xamarin.Forms.Color TextColor
         {
@@ -56,27 +144,92 @@ namespace Estimationtool.ViewModels
 
         public CustomFilterViewModel()
         {
-            List = new List<string>()
-            {
-                "WBS Element",
-                "Product",
-                "Item Desc",
-                "Drawing No",
-                "Specification",
-                "Area Desc",
-                "Project",
-                "Purchasing Doc",
-                "PO Date",
-                "PO Vendor",
-                "Destination"
+           
 
-            };
-
-            SelectedIndex = 1;
+            SelectedIndex1 = 1;
             ChangeTextColorCommand = new Command(ChangeColor);
+
+            Title = "Home";
+            Products = new ObservableCollection<Product>();
+
+            
+
+            var list1 = new List<string>()
+                          {
+                                 "WBSElement",
+                                 "ProductNo",
+                                 "MatrialNo",
+                                 "Specification"
+
+                          };
+
+            List1 = list1;
+
+
+
+
+            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+
+            try
+            {
+
+                ExecuteLoadItemsCommand();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
 
 
         }
+
+
+        async Task ExecuteLoadItemsCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                Products.Clear();
+                var items = await DataStore.GetItemsAsync();
+                foreach (var item in items)
+                {
+                    Products.Add(item);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
 
         public ICommand ChangeTextColorCommand
         {

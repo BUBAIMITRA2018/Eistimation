@@ -6,7 +6,7 @@ namespace Estimationtool.Services
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
+        List<string> AddItemAsync(string propertyname);
         Task<bool> UpdateItemAsync(T item);
         Task<bool> DeleteItemAsync(string id);
         Task<T> GetItemAsync(string id);
