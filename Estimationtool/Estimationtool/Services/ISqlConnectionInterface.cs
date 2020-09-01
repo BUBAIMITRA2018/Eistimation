@@ -1,4 +1,4 @@
-﻿using SQLite.Net;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +9,7 @@ namespace Estimationtool.Services
     public interface ISqlConnectionInterface
 
     {
-        Task<SQLiteConnection> GetSQLiteConnection();
+        //Task<SQLiteConnection> GetSQLiteConnection();
 
     }
 

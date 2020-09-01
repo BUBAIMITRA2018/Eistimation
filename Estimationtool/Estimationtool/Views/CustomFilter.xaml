@@ -68,9 +68,6 @@
 
 
 
-
-
-
                             <StackLayout x:Name="SearchBy"  Grid.Row="1" Grid.Column="8" >
                                 <Label Text="SearchBy" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,5,0,0"  />
                             </StackLayout>
@@ -268,12 +265,6 @@
                         </dg:DataGrid.RowsBackgroundColorPalette>
 
                     </dg:DataGrid>
-
-
-
-
-
-
 
 
                     </StackLayout>
