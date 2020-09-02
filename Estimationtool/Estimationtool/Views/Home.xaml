@@ -4,6 +4,7 @@
               xmlns:conv="clr-namespace:DataGridSample.Views.Converters;assembly=DataGridSample"
 			 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"              
              x:Class="Estimationtool.Views.Home"
+             Visual="Material"
              
              Title="Home">
 
@@ -16,6 +17,17 @@
         </StackLayout>
 
     </NavigationPage.TitleView>
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+
+        </ResourceDictionary>
+
+
+
+    </ContentPage.Resources>
 
 
 
@@ -59,7 +71,7 @@
                                 <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="WBSElement" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="WBSElement"   FontSize="10" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
                                 </dg:DataGridColumn>
