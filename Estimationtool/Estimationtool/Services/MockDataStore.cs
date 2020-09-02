@@ -22,22 +22,22 @@ namespace Estimationtool.Services
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
                 UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
 
-                 new Product{Id = "2", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                 new Product{Id = "2", WBSElement = "Second product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
                 ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
                 UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
 
-                new Product{Id = "3", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                new Product{Id = "3", WBSElement = "Third product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
                 ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
                 UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
 
-                new Product{Id = "4", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                new Product{Id = "4", WBSElement = "Forth product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
                 ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
                 UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
 
-                new Product{Id = "5", WBSElement = "First product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
+                new Product{Id = "5", WBSElement = "Five product" , Description = "This is an product description.", ProductNo = "1234",Project = "CasterCSP",
                 ItemDescription = "This is an product description." , MatrialNo = "54321", Size = "567" , Specification = "1234567" , QtyReq = "2",NetOrderPrice = "500000078905.879",
                 UnitofMeasurment = "768" , UnitWt = "2345" , WeightUnit = "Kg", PurchasingDocument = "abcdfeg" , Item = "ytrgfy", PurchaseOrderNo = "456789",
                 UnitRatePrice = "KG" , Currency = "RS", SupplierName = "ABB LTD.", Destination = "TATA STEEL"},
@@ -57,7 +57,7 @@ namespace Estimationtool.Services
             var list = new List<string>();
             foreach (var item in products)
             {
-                var value = ReflectionExtensions.SetPropertyValue(item, propertyname);
+                var value = ReflectionExtensions.getPropertyValue(item, propertyname);
 
 
                 list.Add(value);
@@ -83,9 +83,77 @@ namespace Estimationtool.Services
 
         }
 
-        public async Task<Product> GetItemAsync(string id)
+        public async Task<List<Product>> GetListOfItemAsync(string searchitem, string searchvalue)
         {
-            return  await Task.FromResult(products.FirstOrDefault(s => s.Id == id));
+
+            var searchitems = new List<Product>();
+
+          
+            if (searchitem == "WBSElement")
+            {
+                searchitems.Clear();
+
+                foreach (var item in products)
+                {
+                    if (item.WBSElement == searchvalue)
+                        searchitems.Add(item);
+                }
+            }
+
+            if (searchitem == "ProductNo")
+            {
+                searchitems.Clear();
+
+                foreach (var item in products)
+                {
+                    if (item.ProductNo == searchvalue)
+                        searchitems.Add(item);
+                }
+            }
+
+
+            if (searchitem == "MatrialNo")
+            {
+                searchitems.Clear();
+
+                foreach (var item in products)
+                {
+                    if (item.MatrialNo == searchvalue)
+                        searchitems.Add(item);
+                }
+            }
+
+
+            if (searchitem == "Specification")
+            {
+                searchitems.Clear();
+
+
+                foreach (var item in products)
+                {
+                    if (item.Specification == searchvalue)
+                        searchitems.Add(item);
+                }
+            }
+
+            if (searchitem =="All")
+            {
+                searchitems.Clear();
+
+
+                foreach (var item in products)
+                {
+                    searchitems.Add(item);
+                   
+                }
+            }
+
+
+
+
+            return await Task.FromResult(searchitems);
+
+
         }
 
         public async Task<IEnumerable<Product>> GetItemsAsync(bool forceRefresh = false)

@@ -4,8 +4,23 @@
               xmlns:conv="clr-namespace:DataGridSample.Views.Converters;assembly=DataGridSample"
 			 xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"              
              x:Class="Estimationtool.Views.Home"
+             
              Title="Home">
-    <ContentPage.Content>
+
+
+    <NavigationPage.TitleView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+            <Image Source="smslogo.png" HorizontalOptions="End"  WidthRequest="100"  Aspect="Fill">
+            </Image>
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+
+
+
+    <ContentPage.Content>    
+               
         <!--<ContentView BackgroundColor="White" Padding="20">-->
 
         <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

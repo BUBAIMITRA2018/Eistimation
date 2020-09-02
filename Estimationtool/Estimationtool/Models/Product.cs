@@ -5,6 +5,12 @@ using System.Text;
 
 namespace Estimationtool.Models
 {
+
+
+
+
+
+
     public class Product: BaseViewModel
     {
 

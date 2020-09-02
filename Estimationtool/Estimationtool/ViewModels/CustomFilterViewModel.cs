@@ -87,6 +87,8 @@ namespace Estimationtool.ViewModels
                List<string> items =   DataStore.AddItemAsync(_selectedItem1);
 
                 List2 = items;
+                SelectedIndex2 = 1;
+                
 
             }
         }
@@ -114,7 +116,26 @@ namespace Estimationtool.ViewModels
             {
                 this.SetProperty(ref this._selectedItem2, value);
 
-                
+
+                try
+                {
+
+                    var searchbyitem = (this._selectedItem2 == null) ? "All" : this._selectedItem2;
+
+                    ExecuteLoadSearchItemsCommand(this._selectedItem1, searchbyitem);
+
+                }
+
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+
+
+
+
+
+
 
 
             }
@@ -220,6 +241,60 @@ namespace Estimationtool.ViewModels
 
 
         }
+
+
+
+
+
+
+        async Task ExecuteLoadSearchItemsCommand(string searchitem, string searchvalue)
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+
+                if(searchvalue != "All")
+                {
+                    ObservableCollection<Product> searchproducts = new ObservableCollection<Product>();
+                    Products.Clear();
+                    var items = await DataStore.GetListOfItemAsync(searchitem, searchvalue);
+                    foreach (var item in items)
+                    {
+                        Products.Add(item);
+                    }
+
+                }
+
+                else
+                {
+                    ExecuteLoadItemsCommand();
+
+                }
+
+               
+
+              
+            }
+
+
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+
+
+        }
+
 
 
 

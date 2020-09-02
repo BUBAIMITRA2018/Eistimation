@@ -3,7 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:control="clr-namespace:Xamarin.Forms.ComboBox;assembly=Xamarin.Forms.ComboBox"
              xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid" 
-             x:Class="Estimationtool.Views.CustomFilter">
+             x:Class="Estimationtool.Views.CustomFilter"
+             
+              Title="CustomFilter">
+
+    <NavigationPage.TitleView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+            <Image Source="smslogo.png" HorizontalOptions="End"  WidthRequest="100"  Aspect="Fill">
+            </Image>
+        </StackLayout>
+
+    </NavigationPage.TitleView>
+    
+    
     <ContentPage.Content>
 
         <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

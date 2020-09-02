@@ -7,7 +7,10 @@
              NavigationPage.HasNavigationBar="False" 
              
              Title="Login">
-      
+
+
+ 
+
 
     <NavigationPage.TitleView>
 
@@ -46,7 +49,7 @@
 
 
                             <StackLayout Margin="10">
-                                <Label Text="SIGN IN" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                <Label Text="SIGN IN" FontSize="Medium" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                             </StackLayout>
 
                             <StackLayout Padding="0" Margin="15,10" HorizontalOptions="Center" WidthRequest="500">
@@ -57,7 +60,7 @@
                                             <Image Source="avatar.png" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
 
-                                        <local:CustomEntry Text="{Binding Username}" Placeholder="Email" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                        <local:CustomEntry Text="{Binding Username}" Placeholder="Email" TextColor="HotPink" FontAttributes="Bold"   HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
@@ -67,24 +70,24 @@
                                             <Image Source="lock_icon_6813906.png" Aspect="AspectFill" Margin="0"/>
                                         </Frame>
 
-                                        <local:CustomEntry Text="{Binding Password}" Placeholder="Password" IsPassword="True" TextColor="HotPink" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                            <local:CustomEntry Text="{Binding Password}" Placeholder="Password" IsPassword="True" TextColor="HotPink" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                                     </StackLayout>
                                 </Frame>
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
 
                                     <Button Command="{Binding AuthenticateCommand}" TextColor="HotPink" FontAttributes="Bold" Text="Login" FontSize="Medium"  />
-
-                                </StackLayout>
+                                    
+                                 </StackLayout>
 
 
                                 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="Still Not Connected ?" TextColor="DarkGray" FontSize="Small" Margin="0,20,0,0"/>
+                                    <!--<Label Text="Still Not Connected ?" TextColor="DarkGray" FontSize="Small" Margin="0,20,0,0"/>
 
-                                    <Button TextColor="HotPink" FontAttributes="Bold"   Text="SignUp" FontSize="Medium" CornerRadius="40" Margin="0,10,0,0" />
+                                    <Button TextColor="HotPink" FontAttributes="Bold"   Text="SignUp" FontSize="Medium" CornerRadius="40" Margin="0,10,0,0" />-->
 
-                                    <Label Text="Invalid credentials entered"  IsVisible="{Binding AreCredentialsInvalid}"  TextColor="Red" Margin="0,30,0,0"  />
+                                    <Label Text="Invalid credentials entered"  IsVisible="{Binding AreCredentialsInvalid}"  TextColor="Red" Margin="0,0,0,0"  />
                                 </StackLayout>
 
                               
