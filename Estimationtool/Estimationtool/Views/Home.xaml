@@ -22,6 +22,20 @@
 
         <ResourceDictionary>
 
+            <ResourceDictionary>
+                <Style x:Key="LabelStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="DeepSkyBlue"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                    <Setter Property="VerticalTextAlignment" Value="Center"/>                    
+                    <Setter Property="HeightRequest" Value="50" />
+                    <Setter Property="WidthRequest" Value="100" />
+                    <Setter Property="Visual" Value="Material"/>
+                </Style>
+            </ResourceDictionary>
+
 
         </ResourceDictionary>
 
@@ -60,159 +74,335 @@
                             </dg:DataGrid.HeaderFontSize>
                             <dg:DataGrid.Columns>
 
-                                <dg:DataGridColumn Title="Id" PropertyName="Id" HorizontalContentAlignment="Center" Width="10*">
+                                <dg:DataGridColumn Title="Id" PropertyName="Id"  HorizontalContentAlignment="Center" Width="10*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Id" FontSize="10"   TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Id" FontSize="15"   TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }"      Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="WBSElement" PropertyName="WBSElement" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="WBSElement"   FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="WBSElement"   FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="ProductNo" PropertyName="ProductNo" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="ProductNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="ProductNo" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+                                    
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="ItemDescription" PropertyName="ItemDescription" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="ItemDescription" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="ItemDescription" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
 
                                 <dg:DataGridColumn Title="MatrialNo" PropertyName="MatrialNo" HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="MatrialNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="MatrialNo" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="Size" PropertyName="Size" HorizontalContentAlignment="Center"  Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Size" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Size" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
 
                                 <dg:DataGridColumn Title="Description" PropertyName="Description"  HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Name" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Drescription" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
+
+                                <dg:DataGridColumn Title="Specification" PropertyName="Specification"  HorizontalContentAlignment="Center" Width="20*">
+                                    <dg:DataGridColumn.FormattedTitle>
+                                        <FormattedString>
+                                            <Span Text="Specification" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
+                                </dg:DataGridColumn>
+
 
 
                                 <dg:DataGridColumn Title="Project" PropertyName="Project"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Project" FontSize="10" TextColor="Black"  FontAttributes="Bold"/>
+                                            <Span Text="Project" FontSize="15" TextColor="Black"  FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+                                    
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="QtyReq"   HorizontalContentAlignment="Center" PropertyName="QtyReq" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="QtyReq"  FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="QtyReq"  FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="UnitofMeas" PropertyName="UnitofMeasurment"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="UnitofMeas" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="UnitofMeas" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+                                    
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="UnitWt" PropertyName="UnitWt" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="UnitWt" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="UnitWt" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="WeightUnit" PropertyName="WeightUnit"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="WeightUnit" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="WeightUnit" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="PurchasingDocument" PropertyName="PurchasingDocument"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="PurchasingDocument" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="PurchasingDocument" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="Item" PropertyName="Item"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Item" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Item" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="PurchaseOrderNo" PropertyName="PurchaseOrderNo"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="PurchaseOrderNo" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="PurchaseOrderNo" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="NetOrderPrice" PropertyName="NetOrderPrice"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="NetOrderPrice" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="NetOrderPrice" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="Currency" PropertyName="Currency"   HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Currency" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Currency" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="SupplierName" PropertyName="SupplierName"    HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="SupplierName" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="SupplierName" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
+
                                 </dg:DataGridColumn>
 
                                 <dg:DataGridColumn Title="Destination" PropertyName="Destination"    HorizontalContentAlignment="Center" Width="20*">
                                     <dg:DataGridColumn.FormattedTitle>
                                         <FormattedString>
-                                            <Span Text="Destination" FontSize="10" TextColor="Black" FontAttributes="Bold"/>
+                                            <Span Text="Destination" FontSize="15" TextColor="Black" FontAttributes="Bold"/>
                                         </FormattedString>
                                     </dg:DataGridColumn.FormattedTitle>
+                                    <dg:DataGridColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ContentView HorizontalOptions="Fill"  VerticalOptions="Fill"  BackgroundColor ="Transparent">
+                                                <Label Text="{Binding }" Style="{StaticResource LabelStyle}" />
+                                            </ContentView>
+                                        </DataTemplate>
+                                    </dg:DataGridColumn.CellTemplate>
                                 </dg:DataGridColumn>
 
 
